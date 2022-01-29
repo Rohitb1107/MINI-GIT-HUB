@@ -15,7 +15,22 @@
 <script type="module">
   import navbar from "./components/navbar.js";
 
+  import getUser from "./scripts/getUser.js";
+
   let container = document.getElementById("container");
 
   container.innerHTML = navbar();
+
+  let input = document.getElementById("search-input");
+
+  input.addEventListener("keypress", searchUser);
+
+  async function searchUser(event) {
+    if (event.key === "Enter") {
+      let query = input.value;
+
+      let response = await getUser(query);
+      console.log("response:", response);
+    }
+  }
 </script>

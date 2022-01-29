@@ -1,7 +1,7 @@
 function navbar() {
     return `<div class="navbar">
       <div class="logo">
-        <a href="">
+        <a href="/">
           <img
             src="https://avatars.githubusercontent.com/u/9919?s=200&v=4"
             alt=""
