@@ -22,7 +22,7 @@ function navbar() {
       <div class="profile">
         <img
           src="https://meetanentrepreneur.lu/wp-content/uploads/2019/08/profil-linkedin.jpg"
-          class="profile-img"
+          id="profile-img"
           alt=""
         />
       </div>

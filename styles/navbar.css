@@ -12,8 +12,8 @@ body {
   padding: 9px;
 }
 
-.profile-img {
-  width: 50%;
+#profile-img {
+  width: 45%;
   border-radius: 50%;
   height: 40px;
 }

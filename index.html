@@ -9,6 +9,10 @@
   </head>
   <body>
     <div id="container"></div>
+
+    <div id="main">
+      <button id="repo-btn">Get User Repo</button>
+    </div>
   </body>
 </html>
 
@@ -19,18 +23,36 @@
 
   let container = document.getElementById("container");
 
+  var response;
+
   container.innerHTML = navbar();
 
   let input = document.getElementById("search-input");
 
   input.addEventListener("keypress", searchUser);
 
+  let btn = document.getElementById("repo-btn");
+  btn.addEventListener("click", getUserRepo);
+
   async function searchUser(event) {
     if (event.key === "Enter") {
       let query = input.value;
 
-      let response = await getUser(query);
+      response = await getUser(query);
+
+      let { avatar_url } = response;
+
+      document.getElementById("profile-img").src = avatar_url;
+
       console.log("response:", response);
     }
+  }
+
+  async function getUserRepo() {
+    let res = await fetch(response.repos_url);
+
+    let repo_data = await res.json();
+
+    console.log("repo_data:", repo_data);
   }
 </script>
